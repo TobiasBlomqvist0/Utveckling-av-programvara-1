@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#messages {
+    width: 100%;
+    max-width: 700px;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#newMessage {
+    width: 100%;
+    max-width: 700px;
+    height: 55px;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: auto;
+}
+
+input {
+    height: 30px;
+    padding: 10px;
+    border-radius: 71px;
+    border: rgba(0, 0, 0, 0.30) solid 1px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 1rem;
+}
+
+button {
+    width: 110px;
+    border-radius: 82px;
+    background-color: #007CEE;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    border: #006 solid 1px;
+}
+
+.messageDiv {
+    display: flex;
+    width: 100%;
+}
+
+.messageSqure {
+    display: flex;
+    flex-direction: column;
+    border-radius: 27.5px;
+    border-bottom-left-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.10);
+    padding: 1rem 2rem;
+}
+
+.blueColor {
+    display: flex;
+    flex-direction: column;
+    border-radius: 27.5px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(0, 124, 238, 0.25);
+    padding: 1rem 2rem;
+    margin-left: auto;
+}
+
+.messageTimeStamp {
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.message {
+    font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.messageDiv {
+    margin-top: 2rem;
+}
+
+.messageDiv + .messageDiv {
+    margin: 1rem 0;
+}
