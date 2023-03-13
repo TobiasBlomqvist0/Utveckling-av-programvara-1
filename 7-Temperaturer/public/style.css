@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    background-color: #e5e5e5;
+    border-radius: 12px;
+}
+
+td, th{
+    font-size: 1.5rem;
+    text-align: left;
+    border: white solid 1px;
+    padding: 1rem;
+}
+
+td {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input {
+    width: 25px;
+    height: 25px;
+}
+
+#YearOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
