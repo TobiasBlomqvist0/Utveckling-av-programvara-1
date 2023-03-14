@@ -8,6 +8,7 @@ btn.addEventListener("click", () => {
 })
 
 async function fetchTodos() {
+    todosBox.innerHTML = ""
     const response = await fetch("/api/todos")
     const data     = await response.json()
 
@@ -15,8 +16,8 @@ async function fetchTodos() {
         <div class="todo" id="todo${todo.id}">
             <div class="todoInfo">
                 <span class="todoName">${todo.name}</span>
-                <span class="edit">Edit</span>
-                <span class="todoDelete">X</span>
+                <span class="edit" onclick="editTodos(${todo.id})">Edit</span>
+                <span class="todoDelete" onclick="removeTodo(${todo.id})">X</span>
             </div>
 
             <div class="todoMessage">
@@ -46,7 +47,7 @@ function saveNewTodo() {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
-                myMessages.push(data)
+                fetchTodos()
             })
             .catch((error) => {
                 console.log('Error:', error);
@@ -56,4 +57,35 @@ function saveNewTodo() {
     catch(err) {
         console.log("Sorry something went very wrong!!")
     }
+}
+
+function removeTodo(id) {
+    try {
+        const data = {id: id}
+
+        fetch("/api/removeTodos", {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                fetchTodos()
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+        });
+
+    }
+    catch(err) {
+        console.log("Sorry something went very wrong!!")
+    }
+}
+
+function editTodos(id) {
+    location.replace(`/api/editTodos/${id}`)
+    location.replace(`/editTodos/${id}`)
 }
