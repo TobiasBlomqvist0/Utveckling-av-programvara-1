@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+
+        <div class="topbar">
+           <div class="backToStartBtn">
+               <button onclick="exitPage()">Back</button>
+            </div>
+            
+            <div class="loginContainer">
+                <button onclick="loginFunction()" class="loginBtn">Login</button>
+            </div>
+        </div>
+
+        <div class="pageContent">
+            <h1>Welcome to <%= page.title %></h1>
+
+            <div class="pageText">
+                <p><%= page.text %></p>
+            </div>
+
+        </div>
+            
+        <script>
+            function exitPage() {
+                window.location = `/` 
+            }
+
+            function loginFunction() {
+                window.location = "/login"
+            }
+        </script>
+    </body>
+</html>

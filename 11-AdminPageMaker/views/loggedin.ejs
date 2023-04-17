@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="topbar">
+            <div id="pageLinks">
+                <% links.forEach(link => { %>
+                    <span onclick="changePage('<%= JSON.stringify(link) %>')"><%= link.title %></span>
+                <% }) %>
+            </div>
+        </div>
+
+
+        <h1>Welcome <%= name %></h1>
+        <p>You are logged in and can change all the pages's info and delete them if needed</p>
+        <p>Click on one of them from top bar and fill in the new updated info</p>
+    </body>
+    <script>
+        function changePage(PageLink) {
+            console.log(JSON.parse(PageLink))
+    
+        }
+    </script>
+</html>

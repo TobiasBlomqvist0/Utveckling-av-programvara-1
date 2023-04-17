@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="topbar">
+            <div id="pageLinks">
+                <% link.forEach(Link => { %>
+                    <span onclick="showInfo('<%= Link.id %>')"><%= Link.title %></span>
+                <% }) %>
+            </div>
+            <div class="loginContainer">
+                <button onclick="loginFunction()" class="loginBtn">Login</button>
+
+            </div>
+        </div>
+
+        <script>
+            function showInfo(pageId) {
+                window.location = `/api/viewPage/${pageId}`    
+            }
+
+            function loginFunction() {
+                window.location = "/login"
+            }
+        </script>
+    </body>
+</html>
